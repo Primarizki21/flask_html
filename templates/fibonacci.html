@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Fibonacci Calculator</title>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Primarizki A. Hariyono</div>
+        <div>
+          <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/cv">CV</a></li>
+            <li><a href="/portofolio">Portofolio</a></li>
+            <li><a href="/biodata">Biodata</a></li>
+            <li><a href="/fibonacci">Fibonacci Calculator</a></li>
+            <li><a href="/csvtojson">View CSV as JSON</a></li>
+            <li><a href="/form">Submit Form</a></li>
+          </ul>
+        </div>
+       </nav>
+    <div id="fibonacci-section">
+        <h1>Fibonacci Calculator</h1>
+        <div class="fibonacci-section1">
+            <form action="http://localhost:5000/fibonacci" method="POST">
+                <p>Masukkan Angka yang Diinginkan:</p>
+                <p><input type="number" name="number" required></p>
+                <p><input type="submit" value="Calculate"></p>
+                
+            </form>
+            {% if result is not none %}
+                <h2>Result:</h2>
+                <p>{{ result }}</p>
+            {% endif %}
+        </div>
+    </div>
+    
+</body>
+</html>
